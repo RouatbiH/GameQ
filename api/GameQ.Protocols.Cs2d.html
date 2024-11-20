@@ -824,8 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>Counter-Strike 2d Protocol Class</p>
-<p>Note:
+	<div class="description"><p>Counter-Strike 2d Protocol Class Note:
 Unable to make player information calls work as the protocol does not like parallel requests</p>
 </div>
 		</div>
@@ -873,7 +872,8 @@ Unable to make player information calls work as the protocol does not like paral
 
 
 	<div class="expandable-collapsedView">
-		Process the response for the Tibia server
+		<p>Process the response for the Tibia server</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -916,7 +916,8 @@ Unable to make player information calls work as the protocol does not like paral
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the details data into a usable format
+		<p>Handles processing the details data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -954,7 +955,8 @@ Unable to make player information calls work as the protocol does not like paral
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the player data into a usable format
+		<p>Handles processing the player data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -992,7 +994,8 @@ Unable to make player information calls work as the protocol does not like paral
 
 
 	<div class="expandable-collapsedView">
-		Read flags from stored value
+		<p>Read flags from stored value</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1061,13 +1064,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#37-46" title="Go to source code">$packets</a></var> = [<b><span class="active" title="GameQ\Protocols\Cs2d">self</span></b>::PACKET_STATUS =&gt; <span class="php-str">"\x01\x00\xFB\x01"</span>, <b><span class="active" title="GameQ\Protocols\Cs2d">self</span></b>::PACKET_PLAYERS =&gt; <span class="php-str">"\x01\x00\xFB\x05"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to query.
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to query.</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1090,13 +1088,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#48-56" title="Go to source code">$responses</a></var> = [<span class="php-str">"\x01\x00\xFB\x01"</span> =&gt; <span class="php-str">"processDetails"</span>, <span class="php-str">"\x01\x00\xFB\x05"</span> =&gt; <span class="php-str">"processPlayers"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Use the response flag to figure out what method to run
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Use the response flag to figure out what method to run</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1119,13 +1112,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#58-63" title="Go to source code">$protocol</a></var> = <span class="php-str">'cs2d'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1148,13 +1136,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#65-70" title="Go to source code">$name</a></var> = <span class="php-str">'cs2d'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1177,13 +1160,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#72-77" title="Go to source code">$name_long</a></var> = <span class="php-str">"Counter-Strike 2d"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1206,13 +1184,8 @@ Unable to make player information calls work as the protocol does not like paral
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Cs2d.html#79-84" title="Go to source code">$join_link</a></var> = <span class="php-str">"cs2d://%s:%d/"</span></code>
 				
-	<div class="expandable-collapsedView">
-		The client join link
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The client join link</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1247,13 +1220,8 @@ Unable to make player information calls work as the protocol does not like paral
 	<span class="php-str">'player'</span> =&gt; [<span class="php-str">'name'</span> =&gt; <span class="php-str">'name'</span>, <span class="php-str">'deaths'</span> =&gt; <span class="php-str">'deaths'</span>, <span class="php-str">'score'</span> =&gt; <span class="php-str">'score'</span>],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

@@ -824,8 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>Battlefield Bad Company 2 Protocol Class</p>
-<p>NOTE:  There are no qualifiers to the response packets sent back from the server as to which response packet
+	<div class="description"><p>Battlefield Bad Company 2 Protocol Class NOTE:  There are no qualifiers to the response packets sent back from the server as to which response packet
 belongs to which query request.  For now this class assumes the responses are in the same order as the order in
 which the packets were sent to the server.  If this assumption turns out to be wrong there is easy way to tell which
 response belongs to which query.  Hopefully this assumption will hold true as it has in my testing.</p>
@@ -875,7 +874,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 
 
 	<div class="expandable-collapsedView">
-		Process the response for the StarMade server
+		<p>Process the response for the StarMade server</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -918,7 +918,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 
 
 	<div class="expandable-collapsedView">
-		Decode the buffer into a usable format
+		<p>Decode the buffer into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -949,7 +950,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 
 
 	<div class="expandable-collapsedView">
-		Process the server details
+		<p>Process the server details</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -980,7 +982,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 
 
 	<div class="expandable-collapsedView">
-		Process the server version
+		<p>Process the server version</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1011,7 +1014,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 
 
 	<div class="expandable-collapsedView">
-		Process the players
+		<p>Process the players</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1084,13 +1088,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 	<b><span class="active" title="GameQ\Protocols\Bfbc2">self</span></b>::PACKET_PLAYERS =&gt; <span class="php-str">"\x00\x00\x00\x00\x24\x00\x00\x00\x02\x00\x00\x00\x0b\x00\x00\x00listPlayers\x00\x03\x00\x00\x00\x61ll\x00"</span>,
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to query.
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to query.</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1113,13 +1112,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#51-60" title="Go to source code">$responses</a></var> = [<span class="php-str">"processVersion"</span>, <span class="php-str">"processDetails"</span>, <span class="php-str">"processPlayers"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Use the response flag to figure out what method to run
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Use the response flag to figure out what method to run</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1142,13 +1136,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#62-67" title="Go to source code">$transport</a></var> = <b><span class="active" title="GameQ\Protocols\Bfbc2">self</span></b>::TRANSPORT_TCP</code>
 				
-	<div class="expandable-collapsedView">
-		The transport mode for this protocol is TCP
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The transport mode for this protocol is TCP</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1171,13 +1160,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#69-74" title="Go to source code">$protocol</a></var> = <span class="php-str">'bfbc2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1200,13 +1184,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#76-81" title="Go to source code">$name</a></var> = <span class="php-str">'bfbc2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1229,13 +1208,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#83-88" title="Go to source code">$name_long</a></var> = <span class="php-str">"Battlefield Bad Company 2"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1258,13 +1232,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#90-95" title="Go to source code">$join_link</a></var> = <span class="php-kw">null</span></code>
 				
-	<div class="expandable-collapsedView">
-		The client join link
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The client join link</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1287,15 +1256,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Bfbc2.html#97-103" title="Go to source code">$port_diff</a></var> = <span class="php-num">29321</span></code>
 				
-	<div class="expandable-collapsedView">
-		query_port = client_port + 29321
-48888 = 19567 + 29321
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>query_port = client_port + 29321
-48888 = 19567 + 29321</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1329,13 +1291,8 @@ response belongs to which query.  Hopefully this assumption will hold true as it
 	<span class="php-str">'team'</span> =&gt; [<span class="php-str">'score'</span> =&gt; <span class="php-str">'tickets'</span>],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

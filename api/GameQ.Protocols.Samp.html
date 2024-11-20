@@ -824,8 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>San Andreas Multiplayer Protocol Class (samp)</p>
-<p>Note:
+	<div class="description"><p>San Andreas Multiplayer Protocol Class (samp) Note:
 Player information will not be returned if player count is over 256</p>
 </div>
 		</div>
@@ -873,7 +872,8 @@ Player information will not be returned if player count is over 256</p>
 
 
 	<div class="expandable-collapsedView">
-		Handle some work before sending the packets out to the server
+		<p>Handle some work before sending the packets out to the server</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -909,7 +909,8 @@ Player information will not be returned if player count is over 256</p>
 
 
 	<div class="expandable-collapsedView">
-		Process the response
+		<p>Process the response</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -952,7 +953,8 @@ Player information will not be returned if player count is over 256</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the server status data
+		<p>Handles processing the server status data</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -990,7 +992,8 @@ Player information will not be returned if player count is over 256</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the player data into a usable format
+		<p>Handles processing the player data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1021,7 +1024,8 @@ Player information will not be returned if player count is over 256</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the rules data into a usable format
+		<p>Handles processing the rules data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1094,15 +1098,8 @@ Player information will not be returned if player count is over 256</p>
 	<b><span class="active" title="GameQ\Protocols\Samp">self</span></b>::PACKET_RULES =&gt; <span class="php-str">"SAMP%sr"</span>,
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1125,13 +1122,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#50-59" title="Go to source code">$responses</a></var> = [<span class="php-str">"\x69"</span> =&gt; <span class="php-str">"processStatus"</span>, <span class="php-str">"\x64"</span> =&gt; <span class="php-str">"processPlayers"</span>, <span class="php-str">"\x72"</span> =&gt; <span class="php-str">"processRules"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Use the response flag to figure out what method to run
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Use the response flag to figure out what method to run</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1154,13 +1146,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#61-66" title="Go to source code">$protocol</a></var> = <span class="php-str">'samp'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1183,13 +1170,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#68-73" title="Go to source code">$name</a></var> = <span class="php-str">'samp'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1212,13 +1194,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#75-80" title="Go to source code">$name_long</a></var> = <span class="php-str">"San Andreas Multiplayer"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1241,13 +1218,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#82-87" title="Go to source code">$server_code</a></var> = <span class="php-kw">null</span></code>
 				
-	<div class="expandable-collapsedView">
-		Holds the calculated server code that is passed when querying for information
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Holds the calculated server code that is passed when querying for information</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1270,13 +1242,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Samp.html#89-94" title="Go to source code">$join_link</a></var> = <span class="php-str">"samp://%s:%d/"</span></code>
 				
-	<div class="expandable-collapsedView">
-		The client join link
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The client join link</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1309,13 +1276,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 	<span class="php-str">'player'</span> =&gt; [<span class="php-str">'name'</span> =&gt; <span class="php-str">'name'</span>, <span class="php-str">'score'</span> =&gt; <span class="php-str">'score'</span>, <span class="php-str">'ping'</span> =&gt; <span class="php-str">'ping'</span>],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

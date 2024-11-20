@@ -824,8 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>Lost Heaven Protocol class</p>
-<p>Reference: <a href="http://lh-mp.eu/wiki/index.php/Query_System">http://lh-mp.eu/wiki/index.php/Query_System</a></p>
+	<div class="description"><p>Lost Heaven Protocol class Reference: <a href="http://lh-mp.eu/wiki/index.php/Query_System">http://lh-mp.eu/wiki/index.php/Query_System</a></p>
 </div>
 		</div>
 
@@ -872,7 +871,8 @@
 
 
 	<div class="expandable-collapsedView">
-		Process the response
+		<p>Process the response</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -915,7 +915,8 @@
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the details data into a usable format
+		<p>Handles processing the details data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -953,7 +954,8 @@
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the player data into a usable format
+		<p>Handles processing the player data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1022,15 +1024,8 @@
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#36-45" title="Go to source code">$packets</a></var> = [<b><span class="active" title="GameQ\Protocols\Lhmp">self</span></b>::PACKET_DETAILS =&gt; <span class="php-str">"LHMPo"</span>, <b><span class="active" title="GameQ\Protocols\Lhmp">self</span></b>::PACKET_PLAYERS =&gt; <span class="php-str">"LHMPp"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1053,13 +1048,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#47-55" title="Go to source code">$responses</a></var> = [<span class="php-str">"LHMPo"</span> =&gt; <span class="php-str">"processDetails"</span>, <span class="php-str">"LHMPp"</span> =&gt; <span class="php-str">"processPlayers"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Use the response flag to figure out what method to run
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Use the response flag to figure out what method to run</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1082,13 +1072,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#57-62" title="Go to source code">$protocol</a></var> = <span class="php-str">'lhmp'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1111,13 +1096,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#64-69" title="Go to source code">$name</a></var> = <span class="php-str">'lhmp'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1140,13 +1120,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#71-76" title="Go to source code">$name_long</a></var> = <span class="php-str">"Lost Heaven"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1169,13 +1144,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Lhmp.html#78-83" title="Go to source code">$port_diff</a></var> = <span class="php-num">1</span></code>
 				
-	<div class="expandable-collapsedView">
-		query_port = client_port + 1
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>query_port = client_port + 1</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1208,13 +1178,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 	<span class="php-str">'player'</span> =&gt; [<span class="php-str">'name'</span> =&gt; <span class="php-str">'name'</span>],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

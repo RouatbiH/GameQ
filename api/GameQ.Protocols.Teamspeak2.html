@@ -824,9 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>Teamspeak 2 Protocol Class</p>
-<p>All values are utf8 encoded upon processing</p>
-<p>This code ported from GameQ v1/v2. Credit to original author(s) as I just updated it to
+	<div class="description"><p>Teamspeak 2 Protocol Class All values are utf8 encoded upon processing This code ported from GameQ v1/v2. Credit to original author(s) as I just updated it to
 work within this new system.</p>
 </div>
 		</div>
@@ -874,7 +872,8 @@ work within this new system.</p>
 
 
 	<div class="expandable-collapsedView">
-		Before we send off the queries we need to update the packets
+		<p>Before we send off the queries we need to update the packets</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -917,7 +916,8 @@ work within this new system.</p>
 
 
 	<div class="expandable-collapsedView">
-		Process the response
+		<p>Process the response</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -960,7 +960,8 @@ work within this new system.</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the details data into a usable format
+		<p>Handles processing the details data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -991,7 +992,8 @@ work within this new system.</p>
 
 
 	<div class="expandable-collapsedView">
-		Process the channel listing
+		<p>Process the channel listing</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1022,7 +1024,8 @@ work within this new system.</p>
 
 
 	<div class="expandable-collapsedView">
-		Process the user listing
+		<p>Process the user listing</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1095,15 +1098,8 @@ work within this new system.</p>
 	<b><span class="active" title="GameQ\Protocols\Teamspeak2">self</span></b>::PACKET_PLAYERS =&gt; <span class="php-str">"sel %d\x0apl\x0a"</span>,
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1126,13 +1122,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Teamspeak2.html#52-57" title="Go to source code">$transport</a></var> = <b><span class="active" title="GameQ\Protocols\Teamspeak2">self</span></b>::TRANSPORT_TCP</code>
 				
-	<div class="expandable-collapsedView">
-		The transport mode for this protocol is TCP
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The transport mode for this protocol is TCP</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1155,13 +1146,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Teamspeak2.html#59-64" title="Go to source code">$protocol</a></var> = <span class="php-str">'teamspeak2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1184,13 +1170,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Teamspeak2.html#66-71" title="Go to source code">$name</a></var> = <span class="php-str">'teamspeak2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1213,13 +1194,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Teamspeak2.html#73-78" title="Go to source code">$name_long</a></var> = <span class="php-str">"Teamspeak 2"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1242,13 +1218,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Teamspeak2.html#80-85" title="Go to source code">$join_link</a></var> = <span class="php-str">"teamspeak://%s:%d/"</span></code>
 				
-	<div class="expandable-collapsedView">
-		The client join link
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The client join link</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1281,13 +1252,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 	<span class="php-str">'team'</span> =&gt; [<span class="php-str">'id'</span> =&gt; <span class="php-str">'id'</span>, <span class="php-str">'name'</span> =&gt; <span class="php-str">'name'</span>],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

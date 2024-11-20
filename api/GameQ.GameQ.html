@@ -109,10 +109,8 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>Base GameQ Class</p>
-<p>This class should be the only one that is included when you use GameQ to query
-any games servers.</p>
-<p>Requirements: See wiki or README for more information on the requirements</p>
+	<div class="description"><p>Base GameQ Class This class should be the only one that is included when you use GameQ to query
+any games servers. Requirements: See wiki or README for more information on the requirements</p>
 <ul>
 <li>PHP 5.4.14+
 <ul>
@@ -151,7 +149,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Create a new instance of this class
+		<p>Create a new instance of this class</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -182,12 +181,12 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		GameQ constructor.
+		<p>GameQ constructor. Do some checks as needed so this will operate</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>GameQ constructor.</p>
-<p>Do some checks as needed so this will operate</p>
+	<div class="description"><p>GameQ constructor. Do some checks as needed so this will operate</p>
 </div>
 
 
@@ -214,7 +213,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Get an option's value
+		<p>Get an option's value</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -245,7 +245,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Set an option's value
+		<p>Set an option's value</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -328,7 +329,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Chainable call to __set, uses set as the actual setter
+		<p>Chainable call to __set, uses set as the actual setter</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -359,7 +361,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Add a single server
+		<p>Add a single server</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -390,7 +393,8 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Add multiple servers in a single call
+		<p>Add multiple servers in a single call</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -421,9 +425,10 @@ any games servers.</p>
 
 
 	<div class="expandable-collapsedView">
-		Add a set of servers from a file or an array of files.
+		<p>Add a set of servers from a file or an array of files.
 Supported formats:
-JSON
+JSON</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -463,7 +468,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Clear all of the defined servers
+		<p>Clear all of the defined servers</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -494,7 +500,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Add a filter to the processing list
+		<p>Add a filter to the processing list</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -525,7 +532,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Remove an added filter
+		<p>Remove an added filter</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -556,7 +564,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Return the list of applied filters
+		<p>Return the list of applied filters</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -587,7 +596,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Main method used to actually process all of the added servers and return the information
+		<p>Main method used to actually process all of the added servers and return the information</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -625,7 +635,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Do server challenges, where required
+		<p>Do server challenges, where required</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -656,7 +667,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Run the actual queries and get the response(s)
+		<p>Run the actual queries and get the response(s)</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -687,7 +699,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Parse the response for a specific server
+		<p>Parse the response for a specific server</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -725,7 +738,8 @@ JSON</p>
 
 
 	<div class="expandable-collapsedView">
-		Apply any filters to the results
+		<p>Apply any filters to the results</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -747,7 +761,7 @@ JSON</p>
 
 		<table class="table" id="constants">
 			<tr>
-				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Constants</th>
+				<th class="table-heading sortable" colspan="4" title="Switch between natural and alphabetical order">Constants</th>
 			</tr>
 
 	<tr class="expandable collapsed" data-order="PROTOCOLS_DIRECTORY" id="PROTOCOLS_DIRECTORY">
@@ -758,6 +772,7 @@ JSON</p>
 				</code>
 			</td>
 
+<td class="table-cell table-shrink"></td>
 			<td class="table-cell">
 <code><a href="source-GameQ.GameQ.html#44-47" title="Go to source code">PROTOCOLS_DIRECTORY</a> = __DIR__ . <span class="php-str">'/Protocols'</span></code>
 
@@ -794,13 +809,8 @@ JSON</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.GameQ.html#49-56" title="Go to source code">$instance</a></var> = <span class="php-kw">null</span></code>
 				
-	<div class="expandable-collapsedView">
-		Holds the instance of itself
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Holds the instance of itself</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -830,13 +840,8 @@ JSON</p>
 	<span class="php-str">'capture_packets_file'</span> =&gt; <span class="php-kw">null</span>,
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Default options
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Default options</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -859,13 +864,8 @@ JSON</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.GameQ.html#99-104" title="Go to source code">$servers</a></var> = []</code>
 				
-	<div class="expandable-collapsedView">
-		Array of servers being queried
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of servers being queried</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -888,13 +888,8 @@ JSON</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.GameQ.html#106-111" title="Go to source code">$queryLibrary</a></var> = <span class="php-str">'GameQ\\Query\\Native'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query library to use.  Default is Native
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query library to use.  Default is Native</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -917,13 +912,8 @@ JSON</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.GameQ.html#113-118" title="Go to source code">$query</a></var> = <span class="php-kw">null</span></code>
 				
-	<div class="expandable-collapsedView">
-		Holds the instance of the queryLibrary
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Holds the instance of the queryLibrary</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">

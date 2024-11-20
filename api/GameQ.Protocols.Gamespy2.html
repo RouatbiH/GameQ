@@ -824,8 +824,7 @@
 
 	</table>
 		<div class="classLikeDescription">
-	<div class="description"><p>GameSpy2 Protocol class</p>
-<p>Given the ability for non utf-8 characters to be used as hostnames, player names, etc... this
+	<div class="description"><p>GameSpy2 Protocol class Given the ability for non utf-8 characters to be used as hostnames, player names, etc... this
 version returns all strings utf-8 encoded (utf8_encode).  To access the proper version of a
 string response you must use utf8_decode() on the specific response.</p>
 </div>
@@ -849,17 +848,17 @@ string response you must use utf8_decode() on the specific response.</p>
 
 	</li>
 	<li>
-<a href="GameQ.Protocols.Had2.html"><span>GameQ\Protocols\Had2</span></a>
-
-
-	</li>
-	<li>
 <a href="GameQ.Protocols.Arma.html"><span>GameQ\Protocols\Arma</span></a>
 
 
 	</li>
 	<li>
 <a href="GameQ.Protocols.Swat4.html"><span>GameQ\Protocols\Swat4</span></a>
+
+
+	</li>
+	<li>
+<a href="GameQ.Protocols.Had2.html"><span>GameQ\Protocols\Had2</span></a>
 
 
 	</li>
@@ -896,7 +895,8 @@ string response you must use utf8_decode() on the specific response.</p>
 
 
 	<div class="expandable-collapsedView">
-		Process the response
+		<p>Process the response</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -939,7 +939,8 @@ string response you must use utf8_decode() on the specific response.</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the details data into a usable format
+		<p>Handles processing the details data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -977,7 +978,8 @@ string response you must use utf8_decode() on the specific response.</p>
 
 
 	<div class="expandable-collapsedView">
-		Handles processing the players data into a usable format
+		<p>Handles processing the players data into a usable format</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1015,7 +1017,8 @@ string response you must use utf8_decode() on the specific response.</p>
 
 
 	<div class="expandable-collapsedView">
-		Parse the player/team info returned from the player call
+		<p>Parse the player/team info returned from the player call</p>
+
 	</div>
 
 	<div class="expandable-expandedView">
@@ -1091,13 +1094,8 @@ string response you must use utf8_decode() on the specific response.</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#38-43" title="Go to source code">$state</a></var> = <b><span class="active" title="GameQ\Protocols\Gamespy2">self</span></b>::STATE_BETA</code>
 				
-	<div class="expandable-collapsedView">
-		Define the state of this class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Define the state of this class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1123,15 +1121,8 @@ string response you must use utf8_decode() on the specific response.</p>
 	<b><span class="active" title="GameQ\Protocols\Gamespy2">self</span></b>::PACKET_PLAYERS =&gt; <span class="php-str">"\xFE\xFD\x00\x43\x4F\x52\x58\x00\xFF\xFF"</span>,
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Array of packets we want to look up.
-Each key should correspond to a defined method in this or a parent class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1154,13 +1145,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#56-64" title="Go to source code">$responses</a></var> = [<span class="php-str">"\x00\x43\x4F\x52\x59"</span> =&gt; <span class="php-str">"processDetails"</span>, <span class="php-str">"\x00\x43\x4F\x52\x58"</span> =&gt; <span class="php-str">"processPlayers"</span>]</code>
 				
-	<div class="expandable-collapsedView">
-		Use the response flag to figure out what method to run
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Use the response flag to figure out what method to run</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1183,13 +1169,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#66-71" title="Go to source code">$protocol</a></var> = <span class="php-str">'gamespy2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		The query protocol used to make the call
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The query protocol used to make the call</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1212,13 +1193,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#73-78" title="Go to source code">$name</a></var> = <span class="php-str">'gamespy2'</span></code>
 				
-	<div class="expandable-collapsedView">
-		String name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>String name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1241,13 +1217,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#80-85" title="Go to source code">$name_long</a></var> = <span class="php-str">"GameSpy2 Server"</span></code>
 				
-	<div class="expandable-collapsedView">
-		Longer string name of this protocol class
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Longer string name of this protocol class</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1270,13 +1241,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 			<td class="table-cell">
 <code><var><a href="source-GameQ.Protocols.Gamespy2.html#87-92" title="Go to source code">$join_link</a></var> = <span class="php-kw">null</span></code>
 				
-	<div class="expandable-collapsedView">
-		The client join link
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>The client join link</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -1310,13 +1276,8 @@ Each key should correspond to a defined method in this or a parent class</p>
 	],
 ]</code>
 				
-	<div class="expandable-collapsedView">
-		Normalize settings for this protocol
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Normalize settings for this protocol</p>
-</div>
 	</div>
 			</td>
 		<td class="table-anchor">
