@@ -46,6 +46,8 @@ class Normalize extends Base
 
     /**
      * Apply this filter
+     * 
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      *
      * @param array         $result
      * @param \GameQ\Server $server
@@ -54,10 +56,6 @@ class Normalize extends Base
      */
     public function apply(array $result, Server $server)
     {
-        if ($server->protocol()->name() === 'mumble') {
-            $abc = 'schee';
-        }
-
         /* Determine if there is data to be processed */
         if (! empty($result)) {
             /* Handle unit test data generation */

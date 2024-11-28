@@ -127,6 +127,8 @@ class Stripcolors extends Base
     /**
      * This helper determines the correct executor to
      * be used with the current Protocl instance.
+     * 
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      *
      * @return null|Closure<string>
      */
