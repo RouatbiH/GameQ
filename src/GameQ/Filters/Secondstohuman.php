@@ -109,9 +109,9 @@ class Secondstohuman extends Base
                 // We match one of the keys we are wanting to convert so add it and move on
                 $result[sprintf(self::RESULT_KEY, $key)] = sprintf(
                     "%02d:%02d:%02d",
-                    floor($value / 3600),
-                    ($value / 60) % 60,
-                    $value % 60
+                    (int)floor($value / 3600),    // Hours
+                    (int)fmod(($value / 60), 60), // Minutes
+                    (int)fmod($value, 60)         // Seconds
                 );
             }
         }
