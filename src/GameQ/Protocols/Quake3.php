@@ -58,13 +58,6 @@ class Quake3 extends Protocol
     protected $name_long = "Quake 3 Server";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
      * @type array

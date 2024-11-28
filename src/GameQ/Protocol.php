@@ -398,11 +398,11 @@ abstract class Protocol
     /**
      * Get/set the packet response
      *
-     * @param array|null $response
+     * @param array $response
      *
      * @return array
      */
-    public function packetResponse(array $response = null)
+    public function packetResponse(array $response = [])
     {
 
         // Act as setter

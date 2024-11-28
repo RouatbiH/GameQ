@@ -57,11 +57,4 @@ abstract class Http extends Protocol
      * @var string
      */
     protected $transport = self::TRANSPORT_TCP;
-
-    /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
 }

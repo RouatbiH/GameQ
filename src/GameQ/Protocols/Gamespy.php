@@ -63,13 +63,6 @@ class Gamespy extends Protocol
     protected $name_long = "GameSpy Server";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Process the response for this protocol
      *
      * @return array

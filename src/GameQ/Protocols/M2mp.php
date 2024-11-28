@@ -78,13 +78,6 @@ class M2mp extends Protocol
     protected $name_long = "Mafia 2 Multiplayer";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * The difference between the client port and query port
      *
      * @type int

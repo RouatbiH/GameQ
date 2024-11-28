@@ -63,13 +63,6 @@ class Ase extends Protocol
     protected $name_long = "All-Seeing Eye";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
      * @type array

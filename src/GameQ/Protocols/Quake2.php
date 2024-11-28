@@ -58,13 +58,6 @@ class Quake2 extends Protocol
     protected $name_long = "Quake 2 Server";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
      * @type array

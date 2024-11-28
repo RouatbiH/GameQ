@@ -65,13 +65,6 @@ class Openttd extends Protocol
     protected $name_long = "Open Transport Tycoon Deluxe";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
      * @type array

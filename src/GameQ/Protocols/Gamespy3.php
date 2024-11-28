@@ -67,13 +67,6 @@ class Gamespy3 extends Protocol
     protected $name_long = "GameSpy3 Server";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * This defines the split between the server info and player/team info.
      * This value can vary by game. This value is the default split.
      *

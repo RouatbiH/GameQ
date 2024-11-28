@@ -74,13 +74,6 @@ class Doom3 extends Protocol
     protected $name_long = "Doom 3";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
      * @type array

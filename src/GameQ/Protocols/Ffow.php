@@ -66,13 +66,6 @@ class Ffow extends Protocol
     protected $name_long = "Frontlines Fuel of War";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * query_port = client_port + 2
      *
      * @type int

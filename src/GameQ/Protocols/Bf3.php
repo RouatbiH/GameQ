@@ -86,13 +86,6 @@ class Bf3 extends Protocol
     protected $name_long = "Battlefield 3";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * query_port = client_port + 22000
      * 47200 = 25200 + 22000
      *
