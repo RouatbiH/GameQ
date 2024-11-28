@@ -46,7 +46,7 @@ class Normalize extends Base
 
     /**
      * Apply this filter
-     * 
+     *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      *
      * @param array         $result
