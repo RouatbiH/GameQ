@@ -141,7 +141,7 @@ class Normalize extends Base
                 }
 
                 /* Write null in case no source was found */
-                $normalized['gq_'.$target] = $normalized['gq_'.$target] ?? null;
+                $normalized['gq_'.$target] = $normalized['gq_'.$target] ? $normalized['gq_'.$target] : null;
             }
         }
 
