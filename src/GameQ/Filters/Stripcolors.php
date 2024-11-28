@@ -20,6 +20,7 @@ namespace GameQ\Filters;
 
 use Closure;
 use GameQ\Server;
+use ReflectionMethod;
 
 /**
  * Class Strip Colors
@@ -141,18 +142,18 @@ class Stripcolors extends Base
             case 'quake3':
             case 'doom3':
             case 'gta5m':
-                return $this->stripQuake(...);
+                return [$this, 'stripQuake'];
 
             /* Strip Protocols using Unreal color tags */
             case 'unreal2':
             case 'ut3':
             case 'gamespy3':  // not sure if gamespy3 supports ut colors but won't hurt
             case 'gamespy2':
-                return $this->stripUnreal(...);
+                return [$this. 'stripUnreal'];
 
             /* Strip Protocols using Source color tags */
             case 'source':
-                return $this->stripSource(...);
+                return [$this, 'stripSource'];
 
             default:
                 return null;
