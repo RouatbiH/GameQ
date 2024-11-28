@@ -111,12 +111,12 @@ class Normalize extends Base
     /**
      * Check a section for normalization
      *
-     * @param $section
-     * @param $data
+     * @param string $section
+     * @param array $data
      *
      * @return array
      */
-    protected function check(string $section, array $data)
+    protected function check($section, array $data)
     {
         /* Initialize the normalized output */
         $normalized = [];

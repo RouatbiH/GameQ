@@ -100,7 +100,7 @@ class Stripcolors extends Base
      *
      * @param string $string
      */
-    protected function stripQuake(string $string)
+    protected function stripQuake($string)
     {
         return preg_replace('#(\^.)#', '', $string);
     }
@@ -110,7 +110,7 @@ class Stripcolors extends Base
      *
      * @param string $string
      */
-    protected function stripSource(string $string)
+    protected function stripSource($string)
     {
         return strip_tags($string);
     }
@@ -120,7 +120,7 @@ class Stripcolors extends Base
      *
      * @param string $string
      */
-    protected function stripUnreal(string $string)
+    protected function stripUnreal($string)
     {
         return preg_replace('/\x1b.../', '', $string);
     }
