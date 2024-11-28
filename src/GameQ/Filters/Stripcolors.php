@@ -149,7 +149,7 @@ class Stripcolors extends Base
             case 'ut3':
             case 'gamespy3':  // not sure if gamespy3 supports ut colors but won't hurt
             case 'gamespy2':
-                return [$this. 'stripUnreal'];
+                return [$this, 'stripUnreal'];
 
             /* Strip Protocols using Source color tags */
             case 'source':
