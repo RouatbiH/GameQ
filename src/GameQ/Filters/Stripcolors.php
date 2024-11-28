@@ -70,6 +70,8 @@ class Stripcolors extends Base
                     if (is_string($value)) {
                         /* Strip the colors and update the value by reference */
                         $value = $executor($value);
+                    } else if (! is_array($value)) {
+                        $value = (string) $value; // TODO: Remove this in the next major version.
                     }
                 });
             }
