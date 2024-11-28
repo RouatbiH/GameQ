@@ -22,7 +22,7 @@ use GameQ\Server;
 
 /**
  * Class Normalize
- * 
+ *
  * This Filter is responsible for normalizing the provided result's
  * property names to the GameQ standard.
  *
@@ -32,7 +32,7 @@ class Normalize extends Base
 {
     /**
      * Determines if data should be persisted for unit testing.
-     * 
+     *
      * @var bool
      */
     protected $writeTestData = false;
@@ -60,7 +60,7 @@ class Normalize extends Base
 
         /* Determine if there is data to be processed */
         if (! empty($result)) {
-            /* Handle unit test data generation */ 
+            /* Handle unit test data generation */
             if ($this->writeTestData) {
                 /* Initialize potential data for unit testing **/
                 $unitTestData = [ ];
@@ -93,7 +93,7 @@ class Normalize extends Base
                 $result['teams'] = [];
             }
 
-            /* Handle unit test data generation */ 
+            /* Handle unit test data generation */
             if ($this->writeTestData) {
                 /* Add the filtered result to the unit test data */
                 $unitTestData['filtered'][$server->id()] = $result;

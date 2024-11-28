@@ -15,7 +15,7 @@ trait WithArrayHelpers
      * This helper does process each element of the provided array recursively.
      * It does so allowing for modifications to the provided array and without
      * using actual recursive calls.
-     * 
+     *
      * @return array
      */
     protected static function applyRecursively(array $data, Closure $callback)

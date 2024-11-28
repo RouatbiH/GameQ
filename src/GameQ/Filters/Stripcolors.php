@@ -24,7 +24,7 @@ use GameQ\Server;
 /**
  * Class Strip Colors
  *
- * This Filter is responsible for removing  
+ * This Filter is responsible for removing
  * color codes from the provided result.
  *
  * @package GameQ\Filters
@@ -33,7 +33,7 @@ class Stripcolors extends Base
 {
     /**
      * Determines if data should be persisted for unit testing.
-     * 
+     *
      * @var bool
      */
     protected $writeTestData = false;
@@ -52,13 +52,13 @@ class Stripcolors extends Base
     {
         /* Prevent working on empty results */
         if (! empty($result)) {
-            /* Handle unit test data generation */ 
+            /* Handle unit test data generation */
             if ($this->writeTestData) {
                 /* Initialize potential data for unit testing **/
                 $unitTestData = [];
 
                 /* Add the initial result to the unit test data */
-                $unitTestData['raw'][$server->id()] = $result;  
+                $unitTestData['raw'][$server->id()] = $result;
             }
 
             /* Determine the executor defined for the current Protocol */
@@ -127,7 +127,7 @@ class Stripcolors extends Base
     /**
      * This helper determines the correct executor to
      * be used with the current Protocl instance.
-     * 
+     *
      * @return null|Closure<string>
      */
     protected function getExecutor(Server $server)
