@@ -44,7 +44,7 @@ class Cfx extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_STATUS => "\xFF\xFF\xFF\xFFgetinfo xxx",
@@ -53,7 +53,7 @@ class Cfx extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "\xFF\xFF\xFF\xFFinfoResponse" => "processStatus",
@@ -62,21 +62,21 @@ class Cfx extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'cfx';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'cfx';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "CitizenFX";
 
@@ -90,7 +90,7 @@ class Cfx extends Protocol
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General

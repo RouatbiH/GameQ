@@ -37,7 +37,7 @@ class Cs2d extends Protocol
     /**
      * Array of packets we want to query.
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_STATUS  => "\x01\x00\xFB\x01",
@@ -48,7 +48,7 @@ class Cs2d extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "\x01\x00\xFB\x01" => "processDetails",
@@ -58,35 +58,35 @@ class Cs2d extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'cs2d';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'cs2d';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Counter-Strike 2d";
 
     /**
      * The client join link
      *
-     * @type string
+     * @var string
      */
     protected $join_link = "cs2d://%s:%d/";
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -200,8 +200,8 @@ class Cs2d extends Protocol
         $result->add('lua_scripts', (int)$this->readFlag($serverFlags, 6));
 
         // Read the rest of the buffer data
-        $result->add('servername', utf8_encode($buffer->readPascalString(0)));
-        $result->add('mapname', utf8_encode($buffer->readPascalString(0)));
+        $result->add('servername', static::isoToUtf8($buffer->readPascalString(0)));
+        $result->add('mapname', static::isoToUtf8($buffer->readPascalString(0)));
         $result->add('num_players', $buffer->readInt8());
         $result->add('max_players', $buffer->readInt8());
         $result->add('game_mode', $buffer->readInt8());
@@ -236,7 +236,7 @@ class Cs2d extends Protocol
             if (($id = $buffer->readInt8()) !== 0) {
                 // Add the results
                 $result->addPlayer('id', $id);
-                $result->addPlayer('name', utf8_encode($buffer->readPascalString(0)));
+                $result->addPlayer('name', static::isoToUtf8($buffer->readPascalString(0)));
                 $result->addPlayer('team', $buffer->readInt8());
                 $result->addPlayer('score', $buffer->readInt32());
                 $result->addPlayer('deaths', $buffer->readInt32());

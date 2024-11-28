@@ -41,7 +41,7 @@ class Ventrilo extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_ALL =>
@@ -51,35 +51,35 @@ class Ventrilo extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'ventrilo';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'ventrilo';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Ventrilo";
 
     /**
      * The client join link
      *
-     * @type string
+     * @var string
      */
     protected $join_link = "ventrilo://%s:%d/";
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -105,7 +105,7 @@ class Ventrilo extends Protocol
     /**
      * Encryption table for the header
      *
-     * @type array
+     * @var array
      */
     private $head_encrypt_table = [
         0x80,
@@ -369,7 +369,7 @@ class Ventrilo extends Protocol
     /**
      * Encryption table for the data
      *
-     * @type array
+     * @var array
      */
     private $data_encrypt_table = [
         0x82,
@@ -723,7 +723,7 @@ class Ventrilo extends Protocol
 
                     // By default we just add they key as an item
                     default:
-                        $result->add($key, utf8_encode($value));
+                        $result->add($key, static::isoToUtf8($value));
                         break;
                 }
             }
@@ -849,7 +849,7 @@ class Ventrilo extends Protocol
             // Split the key=value pair
             list($key, $value) = explode("=", $item, 2);
 
-            $result->addTeam(strtolower($key), utf8_encode($value));
+            $result->addTeam(strtolower($key), static::isoToUtf8($value));
         }
     }
 
@@ -871,7 +871,7 @@ class Ventrilo extends Protocol
             // Split the key=value pair
             list($key, $value) = explode("=", $item, 2);
 
-            $result->addPlayer(strtolower($key), utf8_encode($value));
+            $result->addPlayer(strtolower($key), static::isoToUtf8($value));
         }
     }
 }

@@ -35,7 +35,7 @@ class Gamespy extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_STATUS => "\x5C\x73\x74\x61\x74\x75\x73\x5C",
@@ -44,30 +44,23 @@ class Gamespy extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'gamespy';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'gamespy';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "GameSpy Server";
-
-    /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
 
     /**
      * Process the response for this protocol
@@ -159,7 +152,7 @@ class Gamespy extends Protocol
                         if (substr($key, 0, $suffix) == 'playername') {
                             $numPlayers++;
                         }
-                        $result->addPlayer(substr($key, 0, $suffix), utf8_encode($val));
+                        $result->addPlayer(substr($key, 0, $suffix), static::isoToUtf8($val));
                     }
                 } else {
                     // Regular variable so just add the value.

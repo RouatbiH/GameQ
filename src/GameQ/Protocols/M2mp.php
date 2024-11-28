@@ -41,7 +41,7 @@ class M2mp extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_ALL => "M2MP",
@@ -50,7 +50,7 @@ class M2mp extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "M2MP" => 'processStatus',
@@ -59,42 +59,35 @@ class M2mp extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'm2mp';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'm2mp';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Mafia 2 Multiplayer";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * The difference between the client port and query port
      *
-     * @type int
+     * @var int
      */
     protected $port_diff = 1;
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -208,7 +201,7 @@ class M2mp extends Protocol
 
             // Only player name information is available
             // Add player name, encoded
-            $result->addPlayer('name', utf8_encode(trim($buffer->readPascalString(1, true))));
+            $result->addPlayer('name', static::isoToUtf8(trim($buffer->readPascalString(1, true))));
         }
 
         // Clear

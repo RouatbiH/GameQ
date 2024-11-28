@@ -23,14 +23,14 @@ class Source extends Base
     /**
      * Holds stub on setup
      *
-     * @type \GameQ\Protocols\Source
+     * @var \GameQ\Protocols\Source
      */
     protected $stub;
 
     /**
      * Holds the expected packets for this protocol class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         \GameQ\Protocol::PACKET_CHALLENGE => "\xFF\xFF\xFF\xFF\x56\x00\x00\x00\x00",

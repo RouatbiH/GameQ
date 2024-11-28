@@ -32,14 +32,14 @@ class Squad extends Source
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'squad';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Squad";
 
@@ -47,7 +47,7 @@ class Squad extends Source
      * query_port = client_port + 19378
      * 27165 = 7787 + 19378
      *
-     * @type int
+     * @var int
      */
     protected $port_diff = 19378;
 }

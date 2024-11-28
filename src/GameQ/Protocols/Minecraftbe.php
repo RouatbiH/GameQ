@@ -31,21 +31,21 @@ class Minecraftbe extends Raknet
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'minecraftbe';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Minecraft Bedrock Edition";
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General

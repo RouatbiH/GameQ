@@ -46,7 +46,7 @@ class Source extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_CHALLENGE => "\xFF\xFF\xFF\xFF\x56\x00\x00\x00\x00",
@@ -58,7 +58,7 @@ class Source extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "\x49" => "processDetails", // I
@@ -70,42 +70,42 @@ class Source extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'source';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'source';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Source Server";
 
     /**
      * Define the Source engine type.  By default it is assumed to be Source
      *
-     * @type int
+     * @var int
      */
     protected $source_engine = self::SOURCE_ENGINE;
 
     /**
      * The client join link
      *
-     * @type string
+     * @var string
      */
     protected $join_link = "steam://connect/%s:%d/";
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General

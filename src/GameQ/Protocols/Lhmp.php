@@ -37,7 +37,7 @@ class Lhmp extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_DETAILS => "LHMPo",
@@ -47,7 +47,7 @@ class Lhmp extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "LHMPo" => "processDetails",
@@ -57,35 +57,35 @@ class Lhmp extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'lhmp';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'lhmp';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Lost Heaven";
 
     /**
      * query_port = client_port + 1
      *
-     * @type int
+     * @var int
      */
     protected $port_diff = 1;
 
     /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -171,10 +171,10 @@ class Lhmp extends Protocol
         $result->add('password', $buffer->readString());
         $result->add('numplayers', $buffer->readInt16());
         $result->add('maxplayers', $buffer->readInt16());
-        $result->add('servername', utf8_encode($buffer->readPascalString()));
+        $result->add('servername', static::isoToUtf8($buffer->readPascalString()));
         $result->add('gamemode', $buffer->readPascalString());
-        $result->add('website', utf8_encode($buffer->readPascalString()));
-        $result->add('mapname', utf8_encode($buffer->readPascalString()));
+        $result->add('website', static::isoToUtf8($buffer->readPascalString()));
+        $result->add('mapname', static::isoToUtf8($buffer->readPascalString()));
 
         unset($buffer);
 
@@ -203,7 +203,7 @@ class Lhmp extends Protocol
             if (($id = $buffer->readInt16()) !== 0) {
                 // Add the results
                 $result->addPlayer('id', $id);
-                $result->addPlayer('name', utf8_encode($buffer->readPascalString()));
+                $result->addPlayer('name', static::isoToUtf8($buffer->readPascalString()));
             }
         }
 

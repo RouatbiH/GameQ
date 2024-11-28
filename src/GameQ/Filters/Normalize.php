@@ -31,7 +31,7 @@ class Normalize extends Base
     /**
      * Holds the protocol specific normalize information
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [];
 

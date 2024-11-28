@@ -29,21 +29,21 @@ class Lifeisfeudal extends Source
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'lifeisfeudal';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Life is Feudal";
 
     /**
      * query_port = client_port + 2
      *
-     * @type int
+     * @var int
      */
     protected $port_diff = 2;
 }

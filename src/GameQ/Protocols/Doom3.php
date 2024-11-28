@@ -37,7 +37,7 @@ class Doom3 extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_ALL => "\xFF\xFFgetInfo\x00PiNGPoNG\x00",
@@ -46,7 +46,7 @@ class Doom3 extends Protocol
     /**
      * Use the response flag to figure out what method to run
      *
-     * @type array
+     * @var array
      */
     protected $responses = [
         "\xFF\xFFinfoResponse" => 'processStatus',
@@ -55,35 +55,28 @@ class Doom3 extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'doom3';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'doom3';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Doom 3";
 
     /**
-     * The client join link
-     *
-     * @type string
-     */
-    protected $join_link = null;
-
-    /**
      * Normalize settings for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -166,7 +159,7 @@ class Doom3 extends Protocol
         // Key / value pairs, delimited by an empty pair
         while ($buffer->getLength()) {
             $key = trim($buffer->readString());
-            $val = utf8_encode(trim($buffer->readString()));
+            $val = static::isoToUtf8(trim($buffer->readString()));
 
             // Something is empty so we are done
             if (empty($key) && empty($val)) {
@@ -204,7 +197,7 @@ class Doom3 extends Protocol
             $result->addPlayer('ping', $buffer->readInt16());
             $result->addPlayer('rate', $buffer->readInt32());
             // Add player name, encoded
-            $result->addPlayer('name', utf8_encode(trim($buffer->readString())));
+            $result->addPlayer('name', static::isoToUtf8(trim($buffer->readString())));
 
             // Increment
             $playerCount++;

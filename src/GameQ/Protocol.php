@@ -29,6 +29,7 @@ namespace GameQ;
  */
 abstract class Protocol
 {
+    use Concerns\WithStringHelpers;
 
     /**
      * Constants for class states
@@ -78,21 +79,21 @@ abstract class Protocol
     /**
      * Short name of the protocol
      *
-     * @type string
+     * @var string
      */
     protected $name = 'unknown';
 
     /**
      * The longer, fancier name for the protocol
      *
-     * @type string
+     * @var string
      */
     protected $name_long = 'unknown';
 
     /**
      * The difference between the client port and query port
      *
-     * @type int
+     * @var int
      */
     protected $port_diff = 0;
 
@@ -100,28 +101,28 @@ abstract class Protocol
      * The transport method to use to actually send the data
      * Default is UDP
      *
-     * @type string
+     * @var string
      */
     protected $transport = self::TRANSPORT_UDP;
 
     /**
      * The protocol type used when querying the server
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'unknown';
 
     /**
      * Holds the valid packet types this protocol has available.
      *
-     * @type array
+     * @var array
      */
     protected $packets = [];
 
     /**
      * Holds the response headers and the method to use to process them.
      *
-     * @type array
+     * @var array
      */
     protected $responses = [];
 
@@ -129,35 +130,35 @@ abstract class Protocol
      * Holds the list of methods to run when parsing the packet response(s) data. These
      * methods should provide all the return information.
      *
-     * @type array
+     * @var array
      */
     protected $process_methods = [];
 
     /**
      * The packet responses received
      *
-     * @type array
+     * @var array
      */
     protected $packets_response = [];
 
     /**
      * Holds the instance of the result class
      *
-     * @type null
+     * @var null
      */
     protected $result = null;
 
     /**
      * Options for this protocol
      *
-     * @type array
+     * @var array
      */
     protected $options = [];
 
     /**
      * Define the state of this class
      *
-     * @type int
+     * @var int
      */
     protected $state = self::STATE_STABLE;
 
@@ -166,7 +167,7 @@ abstract class Protocol
      *
      * @todo: Remove this ugly bulk by moving specific ones to their specific game(s)
      *
-     * @type array
+     * @var array
      */
     protected $normalize = [
         // General
@@ -206,9 +207,9 @@ abstract class Protocol
     /**
      * Quick join link
      *
-     * @type string
+     * @var null|string
      */
-    protected $join_link = '';
+    protected $join_link = null;
 
     /**
      * @param array $options
@@ -260,7 +261,7 @@ abstract class Protocol
     /**
      * Return the join_link as defined by the protocol class
      *
-     * @return string
+     * @return null|string
      */
     public function joinLink()
     {
