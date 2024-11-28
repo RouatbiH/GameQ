@@ -18,6 +18,7 @@
 
 namespace GameQ\Filters;
 
+use Closure;
 use GameQ\Server;
 
 /**
@@ -29,6 +30,12 @@ use GameQ\Server;
  */
 class Stripcolors extends Base
 {
+    /**
+     * Determines if data should be persisted for unit testing.
+     * 
+     * @var bool
+     */
+    protected $writeTestData = false;
 
     /**
      * Apply this filter
@@ -42,77 +49,110 @@ class Stripcolors extends Base
      */
     public function apply(array $result, Server $server)
     {
+        /* Prevent working on empty results */
+        if (! empty($result)) {
+            /* Handle unit test data generation */ 
+            if ($this->writeTestData) {
+                /* Initialize potential data for unit testing **/
+                $unitTestData = [];
 
-        // No result passed so just return
-        if (empty($result)) {
-            return $result;
+                /* Add the initial result to the unit test data */
+                $unitTestData['raw'][$server->id()] = $result;  
+            }
+
+            /* Determine the executor defined for the current Protocol */
+            if ($executor = $this->getExecutor($server)) {
+                /* Apply the executor to the result recursively */
+                array_walk_recursive($result, function (&$value, string $property) use ($executor) {
+                    /* The executor may only be applied to strings */
+                    if (is_string($value)) {
+                        /* Strip the colors and update the value by reference */
+                        $value = $executor($value);
+                    }
+                });
+            }
+
+            /* Handle unit test data generation */
+            if ($this->writeTestData) {
+                /* Add the filtered result to the unit test data */
+                $unitTestData['filtered'][$server->id()] = $result;
+                
+                /* Persist the collected data to the tests directory */
+                file_put_contents(
+                    sprintf(
+                        '%s/../../../tests/Filters/Providers/Stripcolors\%s_1.json',
+                        __DIR__,
+                        $server->protocol()->getProtocol()
+                    ),
+                    json_encode($unitTestData, JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR)
+                );
+            }
         }
 
-        //$data = [];
-        //$data['raw'][ $server->id() ] = $result;
-
-        // Switch based on the base (not game) protocol
-        switch ($server->protocol()->getProtocol()) {
-            case 'quake2':
-            case 'quake3':
-            case 'doom3':
-                array_walk_recursive($result, [$this, 'stripQuake']);
-                break;
-            case 'unreal2':
-            case 'ut3':
-            case 'gamespy3':  //not sure if gamespy3 supports ut colors but won't hurt
-            case 'gamespy2':
-                array_walk_recursive($result, [$this, 'stripUnreal']);
-                break;
-            case 'source':
-                array_walk_recursive($result, [$this, 'stripSource']);
-                break;
-            case 'gta5m':
-                array_walk_recursive($result, [$this, 'stripQuake']);
-                break;
-        }
-
-        /*$data['filtered'][ $server->id() ] = $result;
-        file_put_contents(
-            sprintf(
-                '%s/../../../tests/Filters/Providers/Stripcolors\%s_1.json',
-                __DIR__,
-                $server->protocol()->getProtocol()
-            ),
-            json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR)
-        );*/
-
-        // Return the stripped result
+        /* Return the filtered result */
         return $result;
     }
 
     /**
-     * Strip color codes from quake based games
+     * Strip color codes from quake based games.
      *
      * @param string $string
      */
-    protected function stripQuake(&$string)
+    protected function stripQuake(string $string)
     {
-        $string = preg_replace('#(\^.)#', '', $string);
+        return preg_replace('#(\^.)#', '', $string);
     }
 
     /**
-     * Strip color codes from Source based games
+     * Strip color codes from Source based games.
      *
      * @param string $string
      */
-    protected function stripSource(&$string)
+    protected function stripSource(string $string)
     {
-        $string = strip_tags($string);
+        return strip_tags($string);
     }
 
     /**
-     * Strip color codes from Unreal based games
+     * Strip color codes from Unreal based games.
      *
      * @param string $string
      */
-    protected function stripUnreal(&$string)
+    protected function stripUnreal(string $string)
     {
-        $string = preg_replace('/\x1b.../', '', $string);
+        return preg_replace('/\x1b.../', '', $string);
+    }
+
+    /**
+     * This helper determines the correct executor to
+     * be used with the current Protocl instance.
+     * 
+     * @return null|Closure<string>
+     */
+    protected function getExecutor(Server $server)
+    {
+        /* Determine the correct executor for the current Protocol instance */
+        switch ($server->protocol()->getProtocol()) {
+            /* Strip Protocols using Quake color tags */
+            case 'quake2':
+            case 'quake3':
+            case 'doom3':
+            case 'gta5m':
+                return $this->stripQuake(...);
+
+            /* Strip Protocols using Unreal color tags */
+            case 'unreal2':
+            case 'ut3':
+            case 'gamespy3':  // not sure if gamespy3 supports ut colors but won't hurt
+            case 'gamespy2':
+                return $this->stripUnreal(...);
+
+            /* Strip Protocols using Source color tags */
+            case 'source':
+                return $this->stripSource(...);
+
+            default:
+                return null;
+        }
     }
 }
