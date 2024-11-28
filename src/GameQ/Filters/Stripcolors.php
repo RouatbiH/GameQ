@@ -65,7 +65,7 @@ class Stripcolors extends Base
             /* Determine the executor defined for the current Protocol */
             if ($executor = $this->getExecutor($server)) {
                 /* Apply the executor to the result recursively */
-                $result = static::applyRecursively($result, function (&$value, $key) use ($executor) {
+                $result = static::applyRecursively($result, function (&$value) use ($executor) {
                     /* The executor may only be applied to strings */
                     if (is_string($value)) {
                         /* Strip the colors and update the value by reference */
