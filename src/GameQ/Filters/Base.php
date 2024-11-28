@@ -18,6 +18,7 @@
 
 namespace GameQ\Filters;
 
+use GameQ\Concerns\WithArrayHelpers;
 use GameQ\Server;
 
 /**
@@ -27,6 +28,7 @@ use GameQ\Server;
  */
 abstract class Base
 {
+    use WithArrayHelpers;
 
     /**
      * Holds the options for this instance of the filter
