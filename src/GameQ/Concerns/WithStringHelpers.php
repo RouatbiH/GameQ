@@ -16,7 +16,7 @@ trait WithStringHelpers
      * @param string $value The ISO 8859-1 encoded string.
      * @return string The UTF-8 encoded string.
      */
-    protected static function isoToUtf8(string $value): string
+    protected static function isoToUtf8(string $value)
     {
         return iconv('ISO-8859-1', 'UTF-8', $value);
     }
@@ -30,7 +30,7 @@ trait WithStringHelpers
      * @param string $value The UTF-8 encoded string.
      * @return string  The ISO 8859-1 encoded string.
      */
-    protected static function utf8ToIso(string $value): string
+    protected static function utf8ToIso(string $value)
     {
         return iconv('UTF-8', 'ISO-8859-1', $value);
     }
