@@ -47,7 +47,7 @@ class Raknet extends Protocol
      * Array of packets we want to look up.
      * Each key should correspond to a defined method in this or a parent class
      *
-     * @type array
+     * @var array
      */
     protected $packets = [
         self::PACKET_STATUS => "\x01%s%s\x02\x00\x00\x00\x00\x00\x00\x00", // Format time, magic,
@@ -56,21 +56,21 @@ class Raknet extends Protocol
     /**
      * The query protocol used to make the call
      *
-     * @type string
+     * @var string
      */
     protected $protocol = 'raknet';
 
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'raknet';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "Raknet Server";
 
@@ -78,7 +78,6 @@ class Raknet extends Protocol
      * Do some work to build the packet we need to send out to query
      *
      * @param Server $server
-     *
      * @return void
      */
     public function beforeSend(Server $server)

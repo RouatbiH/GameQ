@@ -30,14 +30,14 @@ class Rfactor2 extends Source
     /**
      * String name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name = 'rfactor2';
 
     /**
      * Longer string name of this protocol class
      *
-     * @type string
+     * @var string
      */
     protected $name_long = "rFactor2";
 }
