@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of GameQ.
  *
@@ -54,7 +55,7 @@ class Eos extends Http
 
     /**
      * Grant type used for authentication
-     * 
+     *
      * @var string
      */
     protected $grant_type = 'client_credentials';
@@ -140,7 +141,7 @@ class Eos extends Http
 
     /**
      * Called before sending the request
-     * 
+     *
      * @param Server $server
      */
     public function beforeSend($server)
@@ -171,7 +172,9 @@ class Eos extends Http
             if (!$device_auth) {
                 return null;
             }
-            $auth_postfields .= "&external_auth_type=deviceid_access_token&external_auth_token={$device_auth['access_token']}&nonce=ABCHFA3qgUCJ1XTPAoGDEF&display_name=User";
+            $auth_postfields .= "&external_auth_type=deviceid_access_token"
+                            . "&external_auth_token={$device_auth['access_token']}"
+                            . "&nonce=ABCHFA3qgUCJ1XTPAoGDEF&display_name=User";
         }
 
         // Make the request to get the access token
@@ -255,5 +258,18 @@ class Eos extends Http
         }
 
         return json_decode($response, true);
+    }
+
+    /**
+     * Safely retrieves an attribute from an array or returns a default value.
+     *
+     * @param array $attributes
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    protected function getAttribute(array $attributes, string $key, $default = null)
+    {
+        return isset($attributes[$key]) ? $attributes[$key] : $default;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of GameQ.
  *
@@ -54,7 +55,7 @@ class Arksa extends Eos
 
     /**
      * Grant type used for authentication
-     * 
+     *
      * @var string
      */
     protected $grant_type = 'client_credentials';
@@ -88,14 +89,14 @@ class Arksa extends Eos
      */
     public function processResponse()
     {
-        $server_data = parent::processResponse();
+        $serverData = parent::processResponse();
 
-        if (!$server_data) {
+        if (!$serverData) {
             throw new Exception('No server data received from EOS API.');
         }
 
         // Filter by port to match server sessions
-        $filtered = array_filter($server_data, function ($session) {
+        $filtered = array_filter($serverData, function ($session) {
             return $session['attributes']['ADDRESSBOUND_s'] === "{$this->serverIp}:{$this->serverPortQuery}" ||
                    $session['attributes']['ADDRESSBOUND_s'] === "0.0.0.0:{$this->serverPortQuery}";
         });
@@ -109,17 +110,21 @@ class Arksa extends Eos
         $result = new Result();
 
         // Add server items to the result object
-        $result->add('hostname', isset($session['attributes']['CUSTOMSERVERNAME_s']) ? $session['attributes']['CUSTOMSERVERNAME_s'] : 'Unknown');
-        $result->add('mapname', isset($session['attributes']['MAPNAME_s']) ? $session['attributes']['MAPNAME_s'] : 'Unknown');
-        $result->add('password', isset($session['attributes']['SERVERPASSWORD_b']) ? $session['attributes']['SERVERPASSWORD_b'] : false);
-        $result->add('numplayers', isset($session['totalPlayers']) ? $session['totalPlayers'] : 0);
-        $result->add('maxplayers', isset($session['settings']['maxPublicPlayers']) ? $session['settings']['maxPublicPlayers'] : 0);
-        $result->add('anticheat', isset($session['attributes']['SERVERUSESBATTLEYE_b']) ? $session['attributes']['SERVERUSESBATTLEYE_b'] : false);
-        $result->add('allowJoinInProgress', isset($session['settings']['allowJoinInProgress']) ? $session['settings']['allowJoinInProgress'] : false);
-        $result->add('day', isset($session['attributes']['DAYTIME_s']) ? $session['attributes']['DAYTIME_s'] : '');
-        $result->add('version', "v" . (isset($session['attributes']['BUILDID_s']) ? $session['attributes']['BUILDID_s'] : '0') . "." . (isset($session['attributes']['MINORBUILDID_s']) ? $session['attributes']['MINORBUILDID_s'] : '0'));
-        $result->add('pve', isset($session['attributes']['SESSIONISPVE_l']) ? boolval($session['attributes']['SESSIONISPVE_l']) : false);
-        $result->add('officialserver', isset($session['attributes']['OFFICIALSERVER_s']) ? boolval($session['attributes']['OFFICIALSERVER_s']) : false);
+        $result->add('hostname', $this->getAttribute($session['attributes'], 'CUSTOMSERVERNAME_s', 'Unknown'));
+        $result->add('mapname', $this->getAttribute($session['attributes'], 'MAPNAME_s', 'Unknown'));
+        $result->add('password', $this->getAttribute($session['attributes'], 'SERVERPASSWORD_b', false));
+        $result->add('numplayers', $this->getAttribute($session, 'totalPlayers', 0));
+        $result->add('maxplayers', $this->getAttribute($session['settings'], 'maxPublicPlayers', 0));
+        $result->add('anticheat', $this->getAttribute($session['attributes'], 'SERVERUSESBATTLEYE_b', false));
+        $result->add('allowJoinInProgress', $this->getAttribute($session['settings'], 'allowJoinInProgress', false));
+        $result->add('day', $this->getAttribute($session['attributes'], 'DAYTIME_s', ''));
+        $result->add(
+            'version',
+            "v" . $this->getAttribute($session['attributes'], 'BUILDID_s', '0') . "." .
+            $this->getAttribute($session['attributes'], 'MINORBUILDID_s', '0')
+        );
+        $result->add('pve', (bool) $this->getAttribute($session['attributes'], 'SESSIONISPVE_l', false));
+        $result->add('officialserver', (bool) $this->getAttribute($session['attributes'], 'OFFICIALSERVER_s', false));
 
         // Return the final result
         return $result->fetch();
