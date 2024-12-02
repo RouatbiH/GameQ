@@ -16,47 +16,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace GameQ\Filters;
-
-use GameQ\Server;
+namespace GameQ\Tests\Protocols;
 
 /**
- * Abstract base class which all filters must inherit
+ * Test Class for Stationeers
  *
- * @author Austin Bischoff <austin@codebeard.com>
+ * @package GameQ\Tests\Protocols
  */
-abstract class Base
+class Stationeers extends Base
 {
     /**
-     * Holds the options for this instance of the filter
+     * Test responses for Stationeers
      *
-     * @var array
-     */
-    protected $options = [];
-
-    /**
-     * Construct
+     * @dataProvider loadData
      *
-     * @param array $options
+     * @param $responses
+     * @param $result
      */
-    public function __construct(array $options = [])
+    public function testResponses($responses, $result)
     {
+        // Pull the first key off the array this is the server ip:port
+        $server = key($result);
 
-        $this->options = $options;
+        $testResult = $this->queryTest(
+            $server,
+            'stationeers',
+            $responses
+        );
+
+        $this->assertEquals($result[$server], $testResult);
     }
-
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * Apply the filter to the data
-     *
-     * @param array         $result
-     * @param \GameQ\Server $server
-     *
-     * @return mixed
-     */
-    abstract public function apply(array $result, Server $server);
 }
