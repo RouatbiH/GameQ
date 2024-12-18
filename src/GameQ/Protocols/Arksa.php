@@ -91,10 +91,6 @@ class Arksa extends Eos
     {
         $serverData = parent::processResponse();
 
-        if (!$serverData) {
-            throw new Exception('No server data received from EOS API.');
-        }
-
         // Filter by port to match server sessions
         $filtered = array_filter($serverData, function ($session) {
             return $session['attributes']['ADDRESSBOUND_s'] === "{$this->serverIp}:{$this->serverPortQuery}" ||

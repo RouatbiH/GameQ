@@ -82,6 +82,13 @@ class Eos extends Http
     protected $user_secret = null;
 
     /**
+     * Holds the server data so we can overwrite it back
+     *
+     * @var string
+     */
+    protected $server_data = null;
+
+    /**
      * Holds the server ip so we can overwrite it back
      *
      * @var string
@@ -120,23 +127,11 @@ class Eos extends Http
      */
     public function processResponse()
     {
-        // Authenticate and get the access token
-        $auth_token = $this->authenticate();
-
-        // If authentication failed, throw an exception
-        if (!$auth_token) {
-            throw new Exception('Failed to authenticate with EOS API.');
-        }
-
-        // Query for server data
-        $server_data = $this->queryServers($auth_token);
-
         // If no server data, throw an exception
-        if (empty($server_data)) {
+        if (empty($this->server_data)) {
             throw new Exception('No server data found. Server might be offline.');
         }
-
-        return $server_data;
+        return $this->server_data;
     }
 
     /**
@@ -148,6 +143,16 @@ class Eos extends Http
     {
         $this->serverIp = $server->ip();
         $this->serverPortQuery = $server->portQuery();
+
+        // Authenticate and get the access token
+        $auth_token = $this->authenticate();
+
+        if (!$auth_token) {
+            return;
+        }
+
+        // Query for server data
+        $this->server_data = $this->queryServers($auth_token);
     }
 
     /**
@@ -256,6 +261,8 @@ class Eos extends Http
         if (!$response) {
             return null;
         }
+
+        $this->packets_response[] = $response;
 
         return json_decode($response, true);
     }
